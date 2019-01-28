@@ -24,6 +24,13 @@ namespace Tests
       var result = Calc.Calculate(value);
       Assert.IsFalse(result.err.Length == 0, $"{value} should yield an error");
     }
+
+     [DataTestMethod]
+    [DataRow("1+3*3")]
+    public void DoBODMAS(string value){
+      var result = Calc.Calculate(value);
+      Assert.IsTrue(result.result == 10, $"{value} should be 10");
+    }
   }
 
   [TestClass]
